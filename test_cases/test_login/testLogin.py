@@ -40,3 +40,4 @@ class TestInterfaz:
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
         time.sleep(3.5)
 
+
