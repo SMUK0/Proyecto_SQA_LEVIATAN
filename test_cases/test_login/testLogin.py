@@ -18,11 +18,11 @@ class TestInterfaz:
 
     def test_login_administrador_positivo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("juan.perez@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass123")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--success']").text
         esperada = "Inicio de sesión exitoso!"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
@@ -31,11 +31,11 @@ class TestInterfaz:
     
     def test_login_maestro_positivo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("maria.garcia@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass123")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--success']").text
         esperada = "Inicio de sesión exitoso!"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
@@ -43,11 +43,11 @@ class TestInterfaz:
     
     def test_login_padre_positivo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("carlos.lopez@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass123")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--success']").text
         esperada = "Inicio de sesión exitoso!"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
@@ -55,11 +55,11 @@ class TestInterfaz:
 
     def test_login_administrador_negativo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("juan.perez@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass1234")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--error']").text
         esperada = "Credenciales incorrectas"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
@@ -68,11 +68,11 @@ class TestInterfaz:
     
     def test_login_maestro_negativo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("maria.garcia@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass1234")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--error']").text
         esperada = "Credenciales incorrectas"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
@@ -80,14 +80,14 @@ class TestInterfaz:
 
     def test_login_padre_negativo(self):
         self.driver.find_element(By.XPATH, "//input[@type = 'email']").send_keys("carlos.lopez@gmail.com")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//input[@type = 'password']").send_keys("pass1234")
-        time.sleep(2)
+        time.sleep(1)
         self.driver.find_element(By.XPATH, "//button[@type = 'submit']").click()
-        time.sleep(4)
+        time.sleep(6)
         actual = self.driver.find_element(By.XPATH, "//div[@class= 'Toastify__toast Toastify__toast-theme--light Toastify__toast--error']").text
         esperada = "Credenciales incorrectas"
         assert esperada in actual, f"ERROR, actual: {actual}, esperado: {esperada}"
-        print(f"actual: {actual}, esperado: {esperada}")
+        print(f"actual: {actual}, esperado: {esperada}") 
 
 
