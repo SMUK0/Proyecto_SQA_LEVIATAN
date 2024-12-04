@@ -54,4 +54,5 @@ class TestEstudiantes:
         agregarEst = self.driver.find_element(By.XPATH, "//div[@class='modal-footer']//button[text()='Agregar Estudiante']")
         agregarEst.click()
         
-        time.sleep(4)
+        time.sleep(3)
+        

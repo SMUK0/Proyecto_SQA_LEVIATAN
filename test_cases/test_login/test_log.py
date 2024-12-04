@@ -30,7 +30,5 @@ class TestInterfaz:
         botonIniciar=self.driver.find_element(By.XPATH,"//button[@class='sc-ivxoEo fnmODh']")
         botonIniciar.click()
        
-        
-        
         time.sleep(4)
         
