@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
-class TestInterfaz:
+class TestInterfazPadres:
     def setup_method(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()

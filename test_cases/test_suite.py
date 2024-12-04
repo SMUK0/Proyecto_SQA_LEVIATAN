@@ -1,2 +1,2 @@
-from test_cases.test_login.testLogin import TestInterfaz
-from test_cases.test_padres.testPadres import TestInterfaz
+from test_cases.test_login.testLogin import TestInterfazLogin
+from test_cases.test_padres.testPadres import TestInterfazPadres
