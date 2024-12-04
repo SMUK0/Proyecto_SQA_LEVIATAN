@@ -17,15 +17,15 @@ class TestInterfaz:
 
     def test_asistencias(self):
         #Login
+        time.sleep(3)
         self.driver.find_element(By.XPATH, "//a[@class='sc-dntaoT cwKVBc']").click()
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element(By.XPATH, "//input[@name = 'email']").send_keys("maria.garcia@gmail.com")
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element(By.XPATH, "//input[@name = 'password']").send_keys("pass123")
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element(By.XPATH, "//button[@class='sc-ivxoEo fnmODh']").click()
-        time.sleep(2)
-     
+        time.sleep(3)
         # BOTON PARA ASISTENCIAS
         self.driver.find_element(By.XPATH, "//span[contains(text(),'Asistencias')]").click()
         time.sleep(3)
