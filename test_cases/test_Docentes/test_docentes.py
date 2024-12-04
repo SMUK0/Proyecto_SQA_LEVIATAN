@@ -25,12 +25,13 @@ class TestInterfaz:
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//button[@class='sc-ivxoEo fnmODh']").click()
         time.sleep(2)
+     
         # BOTON PARA ASISTENCIAS
         self.driver.find_element(By.XPATH, "//span[contains(text(),'Asistencias')]").click()
         time.sleep(3)
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, "//select[@id='cursoSelect']/option[text() = 'Rojo - Primero']").click()
+        self.driver.find_element(By.XPATH, "//select[@id='cursoSelect']/option[text() = 'Rojo']").click()
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//button[contains(text(),'Marcar Todos como Presentes')]").click()
         time.sleep(2)
@@ -47,15 +48,23 @@ class TestInterfaz:
         esperada = "Asistencias guardadas correctamente"
         assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
 
-
+#ACABADO
 
     def test_notas(self):
+        self.driver.find_element(By.XPATH, "//a[@class='sc-dntaoT cwKVBc']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//input[@name = 'email']").send_keys("maria.garcia@gmail.com")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//input[@name = 'password']").send_keys("pass123")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='sc-ivxoEo fnmODh']").click()
+        time.sleep(2)
          #BOTON PARA NOTAS
         self.driver.find_element(By.XPATH, "//span[contains(text(),'Notas')]").click()
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, "//select[@id='curso-select']/option[text() = 'Rojo - Primero']").click()
+        self.driver.find_element(By.XPATH, "//select[@id='curso-select']/option[text() = 'Rojo']").click()
         time.sleep(2)
         #Abre desplegable
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
@@ -68,18 +77,58 @@ class TestInterfaz:
         #Elige brimestre
         self.driver.find_element(By.XPATH, "//select[@id='bimestre-select']/option[@value = '1']").click()
         time.sleep(2)
-    #def test_notificaciones(self):
+        self.driver.find_element(By.XPATH, "//input[@class='form-control']").send_keys("6")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='btn btn-success']").click()
+        time.sleep(2)
+        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notas guardadas exitosamente')]").text
+        print("********", actual)  
+        esperada = "Notas guardadas exitosamente"
+        assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
+
+
+
+
+    def test_notificaciones(self):
         # BOTON PARA NOTIFICACIONES
-     #   self.driver.find_element(By.XPATH, "//span[contains(text(),'Notificaciones')]").click()
-      #  time.sleep(2)
-       # self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary mb-3']").click()
-        #time.sleep(2)
-        #self.driver.find_element(By.XPATH, "//select[@name='estudiante_id']").click()
-        #time.sleep(2)
-        #self.driver.find_element(By.XPATH, "//textarea[@name='mensaje']").click()
-        #time.sleep(2)
-        #self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary']").click()
-        #time.sleep(2)
+        self.driver.find_element(By.XPATH, "//a[@class='sc-dntaoT cwKVBc']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//input[@name = 'email']").send_keys("maria.garcia@gmail.com")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//input[@name = 'password']").send_keys("pass123")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='sc-ivxoEo fnmODh']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//span[contains(text(),'Notificaciones')]").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary mb-3']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//select[@name='estudiante_id']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//option[@value='1']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//textarea[@name='mensaje']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//textarea[@name='mensaje']").send_keys("Su hijo se porto mal")
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary']").click()
+        time.sleep(2)
+        #Confirmacion de registro de notificacion
+        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notificación agregada exitosamente')]").text
+        print("********", actual)  
+        esperada = "Notificación agregada exitosamente"
+        assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
+        #Eliminacion de notificacion
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='btn btn-danger btn-sm']").click()
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@class='swal2-confirm swal2-styled']").click()
+        #Confirmacion de eliminacion de notificacion
+        time.sleep(2)
+        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notificación eliminada exitosamente')]").text
+        print("********", actual)  
+        esperada = "Notificación eliminada exitosamente"
+        assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
 
 
 
