@@ -114,7 +114,7 @@ class TestInterfaz:
         self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary']").click()
         time.sleep(2)
         #Confirmacion de registro de notificacion
-        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notificación agregada exitosamente')]").text
+        actual = self.driver.find_element(By.XPATH, "//div[@class='Toastify__toast-body']").text
         print("********", actual)  
         esperada = "Notificación agregada exitosamente"
         assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
