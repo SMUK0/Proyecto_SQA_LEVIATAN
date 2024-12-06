@@ -31,7 +31,7 @@ class TestInterfaz:
         time.sleep(3)
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, "//select[@id='cursoSelect']/option[text() = 'Rojo']").click()
+        self.driver.find_element(By.XPATH, "//select[@id='cursoSelect']/option[text() = 'Azul']").click()
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//button[contains(text(),'Marcar Todos como Presentes')]").click()
         time.sleep(2)
@@ -43,7 +43,7 @@ class TestInterfaz:
         self.driver.find_element(By.XPATH, "//button[contains(text(),'Guardar Asistencia')]").click()
         time.sleep(2)
         #Confirmacion de registro de asistencias
-        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Asistencias guardadas correctamente')]").text
+        actual = self.driver.find_element(By.XPATH, "//div[@class='Toastify__toast-body']").text
         print("********", actual)  
         esperada = "Asistencias guardadas correctamente"
         assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
@@ -64,7 +64,7 @@ class TestInterfaz:
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, "//select[@id='curso-select']/option[text() = 'Rojo']").click()
+        self.driver.find_element(By.XPATH, "//select[@id='curso-select']/option[text() = 'Azul']").click()
         time.sleep(2)
         #Abre desplegable
         self.driver.find_element(By.XPATH, "//select[@class='form-select']").click()
@@ -81,7 +81,7 @@ class TestInterfaz:
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//button[@class='btn btn-success']").click()
         time.sleep(2)
-        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notas guardadas exitosamente')]").text
+        actual = self.driver.find_element(By.XPATH, "//div[@class='Toastify__toast-body']").text
         print("********", actual)  
         esperada = "Notas guardadas exitosamente"
         assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
@@ -125,7 +125,7 @@ class TestInterfaz:
         self.driver.find_element(By.XPATH, "//button[@class='swal2-confirm swal2-styled']").click()
         #Confirmacion de eliminacion de notificacion
         time.sleep(2)
-        actual = self.driver.find_element(By.XPATH, "//div[contains(text(),'Notificación eliminada exitosamente')]").text
+        actual = self.driver.find_element(By.XPATH, "//div[@class='Toastify__toast-body']").text
         print("********", actual)  
         esperada = "Notificación eliminada exitosamente"
         assert esperada == actual, f"ERROR, actual {actual}, esperado: {esperada}"
